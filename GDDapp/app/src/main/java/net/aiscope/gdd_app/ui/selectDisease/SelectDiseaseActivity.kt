@@ -12,7 +12,7 @@ import net.aiscope.gdd_app.repository.HospitalRepository
 import net.aiscope.gdd_app.repository.SharedPreferencesRepository
 import net.aiscope.gdd_app.ui.capture.CaptureImageActivity
 
-class SelectDiseaseActivity : AppCompatActivity() {
+class SelectDiseaseActivity : AppCompatActivity() , SelectDiseaseView{
     private val repository: HospitalRepository = SharedPreferencesRepository(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {

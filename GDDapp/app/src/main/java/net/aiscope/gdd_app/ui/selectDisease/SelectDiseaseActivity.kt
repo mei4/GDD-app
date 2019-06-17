@@ -6,17 +6,21 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import dagger.android.AndroidInjection
 import net.aiscope.gdd_app.R
 import net.aiscope.gdd_app.model.Disease
 import net.aiscope.gdd_app.repository.HospitalRepository
 import net.aiscope.gdd_app.repository.SharedPreferencesRepository
 import net.aiscope.gdd_app.ui.capture.CaptureImageActivity
+import javax.inject.Inject
 
 class SelectDiseaseActivity : AppCompatActivity() , SelectDiseaseView{
-    private val repository: HospitalRepository = SharedPreferencesRepository(this)
+
+    @Inject lateinit var presenter: SelectDiseasePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
         setContentView(R.layout.activity_select_disease)
 
         val captureImageButton = findViewById<Button>(R.id.button_capture_image_select_disease)
@@ -47,6 +51,6 @@ class SelectDiseaseActivity : AppCompatActivity() , SelectDiseaseView{
     }
 
     private fun saveDisease(disease: Disease) {
-        repository.store(disease)
+        presenter.saveDisease(disease)
     }
 }

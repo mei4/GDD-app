@@ -14,36 +14,44 @@
             android:layout_marginTop="180dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/welcome_textview"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/welcome_textview"
             app:layout_constraintVertical_chainStyle="packed"
-            />
+            style="@style/HeadlineTitle"
+            android:textAlignment="center"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_capturing_msg"
             android:id="@+id/start_capturing_textview"
-            android:layout_marginTop="18dp"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_textview" app:layout_constraintStart_toStartOf="@+id/welcome_textview"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_textview"
+            app:layout_constraintStart_toStartOf="@+id/welcome_textview"
             app:layout_constraintEnd_toEndOf="@+id/welcome_textview"
-            />
+            style="@style/HeadlineSubtitle"
+            android:textAlignment="center"/>
+
+    <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_diseases"
+            android:layout_marginTop="60dp"
+            app:layout_constraintTop_toBottomOf="@+id/start_capturing_textview"
+            app:layout_constraintStart_toStartOf="@+id/start_capturing_textview"
+            app:layout_constraintEnd_toEndOf="@+id/start_capturing_textview"
+            android:spinnerMode="dropdown"
+            android:entries="@array/diseases"/>
+
     <Button
             android:text="@string/button_go_to_select_disease_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/button_go_to_select_disease"
-            android:layout_marginTop="60dp"
-            app:layout_constraintTop_toBottomOf="@+id/start_capturing_textview" app:layout_constraintStart_toStartOf="@+id/start_capturing_textview"
-            app:layout_constraintEnd_toEndOf="@+id/start_capturing_textview"
-            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_diseases" app:layout_constraintStart_toStartOf="@+id/spinner_diseases"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_diseases"
+            android:textAllCaps="true"
             />
-    <!--<Button-->
-            <!--android:text="@string/button_go_to_select_disease_text"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/button_go_to_select_disease" android:layout_marginTop="32dp"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/button_go_to_new_health_facility"-->
-            <!--app:layout_constraintEnd_toEndOf="@+id/button_go_to_new_health_facility"-->
-            <!--app:layout_constraintStart_toStartOf="@+id/button_go_to_new_health_facility" android:textAllCaps="false"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

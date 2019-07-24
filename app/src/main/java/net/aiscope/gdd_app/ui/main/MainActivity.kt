@@ -23,13 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         askCameraPermission()
-
-        val buttonNewHealthFacility = findViewById<Button>(R.id.button_go_to_new_health_facility)
         val buttonSelectDisease = findViewById<Button>(R.id.button_go_to_select_disease)
 
-        buttonNewHealthFacility.setOnClickListener {
-            startActivity(Intent(this, NewHealthFacilityActivity::class.java))
-        }
 
         buttonSelectDisease.setOnClickListener {
             startActivity(Intent(this, SelectDiseaseActivity::class.java))
